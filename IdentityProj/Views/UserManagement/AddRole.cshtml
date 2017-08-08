@@ -1,0 +1,8 @@
+﻿@model IdentityProj.ViewModels.UserManagementAddRoleViewModel
+
+<form asp-controller="UserManagement" asp-action="AddRole">
+    <input asp-for="UserId" />
+    <select asp-for="NewRole">
+        <option value="value">Text</option>
+    </select>
+</form>
