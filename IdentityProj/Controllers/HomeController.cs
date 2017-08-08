@@ -7,20 +7,21 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityProj.Controllers
 {
+    [Authorize(Roles = "Member")]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        [Authorize]
+        //[Authorize(Roles ="Member")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

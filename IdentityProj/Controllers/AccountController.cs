@@ -64,5 +64,9 @@ namespace IdentityProj.Controllers
             }
             return View(vm);
         }
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

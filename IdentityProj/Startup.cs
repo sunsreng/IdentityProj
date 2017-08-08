@@ -1,6 +1,8 @@
-﻿using IdentityProj.Models;
+﻿using IdentityProj.Configuration;
+using IdentityProj.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -62,6 +64,7 @@ namespace IdentityProj
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            new UserRoleSeed(app.ApplicationServices.GetService<RoleManager<IdentityRole>>()).Seed();
         }
     }
 }
