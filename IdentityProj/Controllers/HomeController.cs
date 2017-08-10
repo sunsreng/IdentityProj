@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace IdentityProj.Controllers
 {
-    [Authorize(Roles = "Member")]
+    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()

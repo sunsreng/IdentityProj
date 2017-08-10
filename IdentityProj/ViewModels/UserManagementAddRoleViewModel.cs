@@ -1,6 +1,4 @@
-﻿using IdentityProj.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace IdentityProj.ViewModels
 {
@@ -8,6 +6,8 @@ namespace IdentityProj.ViewModels
     {
         public string UserId { get; set; }
         public string NewRole { get; set; }
-        public List<IdentityRole> Roles { get; set; }
+        public SelectList Roles { get; set; }
+        public string Email { get; set; }
+        //public List<IdentityRole> Roles { get; set; }
     }
 }

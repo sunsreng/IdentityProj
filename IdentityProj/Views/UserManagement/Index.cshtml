@@ -1,5 +1,7 @@
-﻿@model IdentityProj.ViewModels.UserManagementIndexViewModel
-
+﻿@using Microsoft.AspNetCore.Identity;
+@using IdentityProj.Models;
+@model IdentityProj.ViewModels.UserManagementIndexViewModel
+@inject UserManager<ApplicationUser> userManager
 <table>
     <thead>
         <tr>
@@ -13,7 +15,7 @@
         {
             <tr>
                 <td>@user.Email</td>
-                <td>@user.Roles</td>
+                <td>@(string.Join(",",await userManager.GetRolesAsync(user)))</td>
                 <td><a asp-controller="UserManagement" asp-action="AddRole" asp-route-id="@user.Id">Add Role</a></td>
             </tr>
         }

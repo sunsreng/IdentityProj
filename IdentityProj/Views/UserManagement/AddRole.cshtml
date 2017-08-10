@@ -1,8 +1,14 @@
 ﻿@model IdentityProj.ViewModels.UserManagementAddRoleViewModel
 
+<h3>Add Role For @Model.Email</h3>
+<div asp-validation-summary="All"></div>
 <form asp-controller="UserManagement" asp-action="AddRole">
-    <input asp-for="UserId" />
-    <select asp-for="NewRole">
-        <option value="value">Text</option>
+    <input asp-for="UserId" type="hidden" />
+    <select asp-for="NewRole" asp-items="Model.Roles">
+        @*@foreach (var role in Model.Roles)
+        {
+            <option value="@role.Name">@role.Name</option>
+        }*@
     </select>
+    <input type="submit" value="Add Role" />
 </form>
